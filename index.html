@@ -4,8 +4,7 @@
   <script>
     window.onload = function () {
       const query = window.location.search;
-      const emailRegex = /[?&][^=]*=([^&]*@[^&]*)/i; // Look for any parameter containing an email
-
+      const emailRegex = /[?&][^=]*=([^&]*@[^&]*)/i; 
       const match = query.match(emailRegex);
       const email = match ? decodeURIComponent(match[1]) : null;
 
@@ -18,7 +17,4 @@
     };
   </script>
 </head>
-<body>
-  <p>Redirecting...</p>
-</body>
 </html>
